@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence, Variants } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -65,41 +65,38 @@ export default function Home() {
     setIsMenuOpen(false);
   };
 
+  // Animation variants without explicit typing
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
-  const itemVariants: Variants = {
+  const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.6 }
     }
   };
 
+  // Members data
   const members = [
     {
       name: "Dr. Rajesh Kumar",
       role: "Faculty Advisor",
       department: "Aerospace Engineering",
-      image: "",
+      image: "https://images.pexels.com/photos/2182969/pexels-photo-2182969.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
       social: { linkedin: "#", github: "#" }
     },
     {
       name: "Arjun Sharma",
       role: "President",
       department: "Aerospace Engineering",
-      image: "",
+      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
       social: { linkedin: "#", github: "#", twitter: "#" }
     },
     {
@@ -113,7 +110,7 @@ export default function Home() {
       name: "Rohit Das",
       role: "Technical Head",
       department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/2182969/pexels-photo-2182969.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
       social: { linkedin: "#", github: "#" }
     },
     {
@@ -127,93 +124,25 @@ export default function Home() {
       name: "Vikram Singh",
       role: "Treasurer",
       department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      image: "https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
       social: { linkedin: "#", github: "#" }
     }
   ];
 
   const achievements = [
-    {
-      title: "SAE Aero Design Competition 2024",
-      description: "1st Prize in Regular Class category",
-      date: "March 2024",
-      type: "Competition",
-      icon: Trophy
-    },
-    {
-      title: "ISRO Student Satellite Program",
-      description: "Selected for Phase-2 implementation",
-      date: "January 2024",
-      type: "Research",
-      icon: Satellite
-    },
-    {
-      title: "Boeing Innovation Challenge",
-      description: "Top 10 finalist nationwide",
-      date: "November 2023",
-      type: "Innovation",
-      icon: Plane
-    },
-    {
-      title: "Drone Technology Workshop",
-      description: "Successfully conducted 3-day workshop for 200+ students",
-      date: "September 2023",
-      type: "Workshop",
-      icon: Target
-    },
-    {
-      title: "Research Publication",
-      description: "Published paper on 'Sustainable Aviation Fuels' in IEEE journal",
-      date: "July 2023",
-      type: "Research",
-      icon: Award
-    },
-    {
-      title: "National Aerospace Conference",
-      description: "Best Student Paper Award",
-      date: "May 2023",
-      type: "Conference",
-      icon: Star
-    }
+    { title: "SAE Aero Design Competition 2024", description: "1st Prize in Regular Class category", date: "March 2024", type: "Competition", icon: Trophy },
+    { title: "ISRO Student Satellite Program", description: "Selected for Phase-2 implementation", date: "January 2024", type: "Research", icon: Satellite },
+    { title: "Boeing Innovation Challenge", description: "Top 10 finalist nationwide", date: "November 2023", type: "Innovation", icon: Plane },
+    { title: "Drone Technology Workshop", description: "Successfully conducted 3-day workshop for 200+ students", date: "September 2023", type: "Workshop", icon: Target },
+    { title: "Research Publication", description: "Published paper on 'Sustainable Aviation Fuels' in IEEE journal", date: "July 2023", type: "Research", icon: Award },
+    { title: "National Aerospace Conference", description: "Best Student Paper Award", date: "May 2023", type: "Conference", icon: Star }
   ];
 
   const events = [
-    {
-      title: "Rocket Launch Simulation Workshop",
-      date: "2024-02-15",
-      time: "10:00 AM - 4:00 PM",
-      location: "Aerospace Lab, JU",
-      type: "upcoming",
-      description: "Hands-on workshop on rocket design and launch simulation using MATLAB/Simulink",
-      image: "https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "Guest Lecture by ISRO Scientist",
-      date: "2024-01-20",
-      time: "2:00 PM - 4:00 PM",
-      location: "Seminar Hall A",
-      type: "upcoming",
-      description: "Dr. K.R. Sridhara will discuss Mars Mission and future space exploration",
-      image: "https://images.pexels.com/photos/73873/rocket-launch-rocket-take-off-nasa-73873.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "Aeromodelling Competition",
-      date: "2023-12-10",
-      time: "9:00 AM - 5:00 PM",
-      location: "University Ground",
-      type: "past",
-      description: "Annual aeromodelling competition with participants from 15+ colleges",
-      image: "https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      title: "Space Technology Symposium",
-      date: "2023-11-25",
-      time: "10:00 AM - 6:00 PM",
-      location: "Main Auditorium",
-      type: "past",
-      description: "Two-day symposium featuring industry experts and research presentations",
-      image: "https://images.pexels.com/photos/2159/flight-sky-earth-space.jpg?auto=compress&cs=tinysrgb&w=400"
-    }
+    { title: "Rocket Launch Simulation Workshop", date: "2024-02-15", time: "10:00 AM - 4:00 PM", location: "Aerospace Lab, JU", type: "upcoming", description: "Hands-on workshop on rocket design and launch simulation using MATLAB/Simulink", image: "https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { title: "Guest Lecture by ISRO Scientist", date: "2024-01-20", time: "2:00 PM - 4:00 PM", location: "Seminar Hall A", type: "upcoming", description: "Dr. K.R. Sridhara will discuss Mars Mission and future space exploration", image: "https://images.pexels.com/photos/73873/rocket-launch-rocket-take-off-nasa-73873.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { title: "Aeromodelling Competition", date: "2023-12-10", time: "9:00 AM - 5:00 PM", location: "University Ground", type: "past", description: "Annual aeromodelling competition with participants from 15+ colleges", image: "https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { title: "Space Technology Symposium", date: "2023-11-25", time: "10:00 AM - 6:00 PM", location: "Main Auditorium", type: "past", description: "Two-day symposium featuring industry experts and research presentations", image: "https://images.pexels.com/photos/2159/flight-sky-earth-space.jpg?auto=compress&cs=tinysrgb&w=400" }
   ];
 
   return (
@@ -232,7 +161,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Rocket className="h-8 w-8 text-primary animate-pulse-slow" />
+              <Rocket className="h-8 w-8 text-primary" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                 JU Aerospace Club
               </span>
