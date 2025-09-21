@@ -1,149 +1,261 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { ThemeToggle } from '@/components/theme-toggle';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { 
-  Rocket, 
-  Users, 
-  Trophy, 
-  Calendar, 
-  Mail, 
-  Phone, 
-  MapPin,
-  Star,
-  Plane,
-  Satellite,
-  Target,
-  Eye,
-  Award,
-  ChevronDown,
-  Menu,
-  X,
-  Github,
-  Linkedin,
-  Twitter
+  Rocket, Calendar, ChevronDown, X, Menu, Target, Eye, 
+  Linkedin, Github, Twitter, Mail, Phone, MapPin, 
+  Users, Star, Plane, Satellite, Trophy, Award, BookOpen,
+  GraduationCap, Microscope
 } from 'lucide-react';
 
-export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+// UI Components (assuming these are from your UI library)
+const Button = ({ children, className = '', variant = 'default', size = 'default', onClick }: any) => (
+  <button 
+    className={`px-4 py-2 rounded-md font-medium transition-colors ${className}`}
+    onClick={onClick}
+  >
+    {children}
+  </button>
+);
+
+const Card = ({ children, className = '' }: any) => (
+  <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}>
+    {children}
+  </div>
+);
+
+const CardHeader = ({ children, className = '' }: any) => (
+  <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>
+    {children}
+  </div>
+);
+
+const CardTitle = ({ children, className = '' }: any) => (
+  <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`}>
+    {children}
+  </h3>
+);
+
+const CardDescription = ({ children, className = '' }: any) => (
+  <p className={`text-sm text-muted-foreground ${className}`}>
+    {children}
+  </p>
+);
+
+const CardContent = ({ children, className = '' }: any) => (
+  <div className={`p-6 pt-0 ${className}`}>
+    {children}
+  </div>
+);
+
+const Badge = ({ children, variant = 'default', className = '' }: any) => (
+  <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors ${className}`}>
+    {children}
+  </span>
+);
+
+const Separator = ({ className = '' }: any) => (
+  <hr className={`border-t ${className}`} />
+);
+
+// Theme Toggle Component (simplified)
+const ThemeToggle = () => {
+  const [isDark, setIsDark] = useState(false);
+  
+  return (
+    <Button 
+      variant="outline" 
+      size="sm"
+      onClick={() => setIsDark(!isDark)}
+      className="w-10 h-10 p-0 rounded-full"
+    >
+      {isDark ? '🌙' : '☀️'}
+    </Button>
+  );
+};
+
+// Sample data
+const members = [
+  {
+    name: "Dr. Anika Sharma",
+    role: "Faculty Advisor",
+    department: "Aerospace Engineering",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    social: {
+      linkedin: "#",
+      github: "#",
+      twitter: "#"
+    }
+  },
+  {
+    name: "Rahul Verma",
+    role: "Club President",
+    department: "Mechanical Engineering",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    social: {
+      linkedin: "#",
+      github: "#"
+    }
+  },
+  {
+    name: "Priya Patel",
+    role: "Technical Lead",
+    department: "Electronics Engineering",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  }
+];
+
+const achievements = [
+  {
+    title: "National Rocketry Challenge 2023",
+    type: "Competition",
+    date: "March 2023",
+    description: "Secured 1st place in the national rocketry competition with our innovative design.",
+    icon: Rocket
+  },
+  {
+    title: "AI in Aerospace Research",
+    type: "Research",
+    date: "January 2023",
+    description: "Published paper on machine learning applications in aerodynamic optimization.",
+    icon: Microscope
+  },
+  {
+    title: "Drone Innovation Award",
+    type: "Innovation",
+    date: "November 2022",
+    description: "Received recognition for developing a novel drone delivery system for medical supplies.",
+    icon: Award
+  },
+  {
+    title: "Wind Tunnel Workshop",
+    type: "Workshop",
+    date: "August 2022",
+    description: "Organized a hands-on workshop on wind tunnel testing for 100+ students.",
+    icon: BookOpen
+  },
+  {
+    title: "Satellite Design Competition",
+    type: "Competition",
+    date: "June 2022",
+    description: "Finalists in the national satellite design competition with our CubeSat prototype.",
+    icon: Satellite
+  },
+  {
+    title: "Aerospace Education Grant",
+    type: "Recognition",
+    date: "April 2022",
+    description: "Awarded a grant to develop aerospace curriculum and learning materials.",
+    icon: GraduationCap
+  }
+];
+
+const events = [
+  {
+    title: "Rocket Launch Workshop",
+    type: "upcoming",
+    date: "2023-12-15",
+    time: "2:00 PM - 5:00 PM",
+    location: "Aerospace Lab, JU Campus",
+    description: "Hands-on workshop on rocket design, construction, and launch techniques.",
+    image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    title: "Guest Lecture: Space Technology",
+    type: "upcoming",
+    date: "2023-12-22",
+    time: "11:00 AM - 1:00 PM",
+    location: "Main Auditorium",
+    description: "Dr. Vikram Sarabhai from ISRO will share insights on recent advancements in space technology.",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    title: "Annual Aerospace Symposium",
+    type: "past",
+    date: "2023-10-10",
+    time: "9:00 AM - 5:00 PM",
+    location: "Conference Hall",
+    description: "Annual event showcasing student projects and research in aerospace engineering.",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    title: "Drone Racing Competition",
+    type: "past",
+    date: "2023-08-20",
+    time: "10:00 AM - 4:00 PM",
+    location: "Sports Ground",
+    description: "Inter-college drone racing competition with participants from 15 institutions.",
+    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+  }
+];
+
+// Define variants with proper typing
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants: Variants = {
+  hidden: { 
+    y: 20, 
+    opacity: 0 
+  },
+  visible: { 
+    y: 0, 
+    opacity: 1, 
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" 
+    } 
+  }
+};
+
+export default function AerospaceClubWebsite() {
   const [activeSection, setActiveSection] = useState('home');
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsMenuOpen(false);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'members', 'achievements', 'events', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
-      sections.forEach((section) => {
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section);
+            break;
           }
         }
-      });
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
-
-  // Animation variants without explicit typing
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6 }
-    }
-  };
-
-  // Members data
-  const members = [
-    {
-      name: "Dr. Rajesh Kumar",
-      role: "Faculty Advisor",
-      department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/2182969/pexels-photo-2182969.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", github: "#" }
-    },
-    {
-      name: "Arjun Sharma",
-      role: "President",
-      department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", github: "#", twitter: "#" }
-    },
-    {
-      name: "Priya Ghosh",
-      role: "Vice President",
-      department: "Mechanical Engineering",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", github: "#" }
-    },
-    {
-      name: "Rohit Das",
-      role: "Technical Head",
-      department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", github: "#" }
-    },
-    {
-      name: "Sneha Roy",
-      role: "Secretary",
-      department: "Electronics Engineering",
-      image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", twitter: "#" }
-    },
-    {
-      name: "Vikram Singh",
-      role: "Treasurer",
-      department: "Aerospace Engineering",
-      image: "https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      social: { linkedin: "#", github: "#" }
-    }
-  ];
-
-  const achievements = [
-    { title: "SAE Aero Design Competition 2024", description: "1st Prize in Regular Class category", date: "March 2024", type: "Competition", icon: Trophy },
-    { title: "ISRO Student Satellite Program", description: "Selected for Phase-2 implementation", date: "January 2024", type: "Research", icon: Satellite },
-    { title: "Boeing Innovation Challenge", description: "Top 10 finalist nationwide", date: "November 2023", type: "Innovation", icon: Plane },
-    { title: "Drone Technology Workshop", description: "Successfully conducted 3-day workshop for 200+ students", date: "September 2023", type: "Workshop", icon: Target },
-    { title: "Research Publication", description: "Published paper on 'Sustainable Aviation Fuels' in IEEE journal", date: "July 2023", type: "Research", icon: Award },
-    { title: "National Aerospace Conference", description: "Best Student Paper Award", date: "May 2023", type: "Conference", icon: Star }
-  ];
-
-  const events = [
-    { title: "Rocket Launch Simulation Workshop", date: "2024-02-15", time: "10:00 AM - 4:00 PM", location: "Aerospace Lab, JU", type: "upcoming", description: "Hands-on workshop on rocket design and launch simulation using MATLAB/Simulink", image: "https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=400" },
-    { title: "Guest Lecture by ISRO Scientist", date: "2024-01-20", time: "2:00 PM - 4:00 PM", location: "Seminar Hall A", type: "upcoming", description: "Dr. K.R. Sridhara will discuss Mars Mission and future space exploration", image: "https://images.pexels.com/photos/73873/rocket-launch-rocket-take-off-nasa-73873.jpeg?auto=compress&cs=tinysrgb&w=400" },
-    { title: "Aeromodelling Competition", date: "2023-12-10", time: "9:00 AM - 5:00 PM", location: "University Ground", type: "past", description: "Annual aeromodelling competition with participants from 15+ colleges", image: "https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?auto=compress&cs=tinysrgb&w=400" },
-    { title: "Space Technology Symposium", date: "2023-11-25", time: "10:00 AM - 6:00 PM", location: "Main Auditorium", type: "past", description: "Two-day symposium featuring industry experts and research presentations", image: "https://images.pexels.com/photos/2159/flight-sky-earth-space.jpg?auto=compress&cs=tinysrgb&w=400" }
-  ];
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 transition-colors duration-300">
@@ -161,7 +273,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Rocket className="h-8 w-8 text-primary" />
+              <Rocket className="h-8 w-8 text-primary animate-pulse-slow" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                 JU Aerospace Club
               </span>
@@ -261,7 +373,6 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div 
-          style={{ y }}
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30 dark:opacity-20"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
