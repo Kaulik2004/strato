@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
@@ -9,65 +9,136 @@ import {
   GraduationCap, Microscope
 } from 'lucide-react';
 
-// UI Components (assuming these are from your UI library)
-const Button = ({ children, className = '', variant = 'default', size = 'default', onClick }: any) => (
-  <button 
-    className={`px-4 py-2 rounded-md font-medium transition-colors ${className}`}
-    onClick={onClick}
-  >
-    {children}
-  </button>
-);
+// Proper TypeScript interfaces
+interface ButtonProps {
+  children: React.ReactNode;
+  className?: string;
+  variant?: 'default' | 'outline' | 'ghost';
+  size?: 'default' | 'sm' | 'lg';
+  onClick?: () => void;
+}
 
-const Card = ({ children, className = '' }: any) => (
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'outline' | 'secondary';
+  className?: string;
+}
+
+interface SeparatorProps {
+  className?: string;
+}
+
+// Updated UI Components with proper TypeScript
+const Button: React.FC<ButtonProps> = ({ 
+  children, 
+  className = '', 
+  variant = 'default', 
+  size = 'default', 
+  onClick 
+}) => {
+  const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background';
+  
+  const variants = {
+    default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+    outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
+    ghost: 'hover:bg-accent hover:text-accent-foreground',
+  };
+  
+  const sizes = {
+    default: 'h-10 py-2 px-4',
+    sm: 'h-9 px-3 rounded-md',
+    lg: 'h-11 px-8 rounded-md',
+  };
+
+  return (
+    <button 
+      className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+const Card: React.FC<CardProps> = ({ children, className = '' }) => (
   <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}>
     {children}
   </div>
 );
 
-const CardHeader = ({ children, className = '' }: any) => (
+const CardHeader: React.FC<CardProps> = ({ children, className = '' }) => (
   <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>
     {children}
   </div>
 );
 
-const CardTitle = ({ children, className = '' }: any) => (
+const CardTitle: React.FC<CardProps> = ({ children, className = '' }) => (
   <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`}>
     {children}
   </h3>
 );
 
-const CardDescription = ({ children, className = '' }: any) => (
+const CardDescription: React.FC<CardProps> = ({ children, className = '' }) => (
   <p className={`text-sm text-muted-foreground ${className}`}>
     {children}
   </p>
 );
 
-const CardContent = ({ children, className = '' }: any) => (
+const CardContent: React.FC<CardProps> = ({ children, className = '' }) => (
   <div className={`p-6 pt-0 ${className}`}>
     {children}
   </div>
 );
 
-const Badge = ({ children, variant = 'default', className = '' }: any) => (
-  <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors ${className}`}>
-    {children}
-  </span>
+const Badge: React.FC<BadgeProps> = ({ children, variant = 'default', className = '' }) => {
+  const variants = {
+    default: 'bg-primary text-primary-foreground hover:bg-primary/80',
+    outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+    secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  };
+
+  return (
+    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors ${variants[variant]} ${className}`}>
+      {children}
+    </span>
+  );
+};
+
+const Separator: React.FC<SeparatorProps> = ({ className = '' }) => (
+  <hr className={`shrink-0 bg-border h-[1px] w-full ${className}`} />
 );
 
-const Separator = ({ className = '' }: any) => (
-  <hr className={`border-t ${className}`} />
-);
-
-// Theme Toggle Component (simplified)
-const ThemeToggle = () => {
+// Theme Toggle Component
+const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
+  
+  // Handle theme change with proper Next.js 15 approach
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const theme = localStorage.getItem('theme');
+      setIsDark(theme === 'dark');
+    }
+  }, []);
+  
+  const toggleTheme = () => {
+    if (typeof window !== 'undefined') {
+      const newTheme = !isDark ? 'dark' : 'light';
+      setIsDark(!isDark);
+      localStorage.setItem('theme', newTheme);
+      document.documentElement.classList.toggle('dark', !isDark);
+    }
+  };
   
   return (
     <Button 
       variant="outline" 
       size="sm"
-      onClick={() => setIsDark(!isDark)}
+      onClick={toggleTheme}
       className="w-10 h-10 p-0 rounded-full"
     >
       {isDark ? '🌙' : '☀️'}
@@ -75,8 +146,41 @@ const ThemeToggle = () => {
   );
 };
 
-// Sample data
-const members = [
+// TypeScript interfaces for data
+interface SocialLinks {
+  linkedin?: string;
+  github?: string;
+  twitter?: string;
+}
+
+interface Member {
+  name: string;
+  role: string;
+  department: string;
+  image: string;
+  social: SocialLinks;
+}
+
+interface Achievement {
+  title: string;
+  type: string;
+  date: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+interface Event {
+  title: string;
+  type: 'upcoming' | 'past';
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+  image: string;
+}
+
+// Sample data with proper typing
+const members: Member[] = [
   {
     name: "Dr. Anika Sharma",
     role: "Faculty Advisor",
@@ -110,7 +214,7 @@ const members = [
   }
 ];
 
-const achievements = [
+const achievements: Achievement[] = [
   {
     title: "National Rocketry Challenge 2023",
     type: "Competition",
@@ -155,11 +259,11 @@ const achievements = [
   }
 ];
 
-const events = [
+const events: Event[] = [
   {
     title: "Rocket Launch Workshop",
     type: "upcoming",
-    date: "2023-12-15",
+    date: "2024-12-15",
     time: "2:00 PM - 5:00 PM",
     location: "Aerospace Lab, JU Campus",
     description: "Hands-on workshop on rocket design, construction, and launch techniques.",
@@ -168,7 +272,7 @@ const events = [
   {
     title: "Guest Lecture: Space Technology",
     type: "upcoming",
-    date: "2023-12-22",
+    date: "2024-12-22",
     time: "11:00 AM - 1:00 PM",
     location: "Main Auditorium",
     description: "Dr. Vikram Sarabhai from ISRO will share insights on recent advancements in space technology.",
@@ -177,7 +281,7 @@ const events = [
   {
     title: "Annual Aerospace Symposium",
     type: "past",
-    date: "2023-10-10",
+    date: "2024-10-10",
     time: "9:00 AM - 5:00 PM",
     location: "Conference Hall",
     description: "Annual event showcasing student projects and research in aerospace engineering.",
@@ -186,7 +290,7 @@ const events = [
   {
     title: "Drone Racing Competition",
     type: "past",
-    date: "2023-08-20",
+    date: "2024-08-20",
     time: "10:00 AM - 4:00 PM",
     location: "Sports Ground",
     description: "Inter-college drone racing competition with participants from 15 institutions.",
@@ -220,12 +324,17 @@ const itemVariants: Variants = {
   }
 };
 
-export default function AerospaceClubWebsite() {
-  const [activeSection, setActiveSection] = useState('home');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+const AerospaceClubWebsite: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string>('home');
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
-  const scrollToSection = (sectionId: string) => {
+  // Handle hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -235,7 +344,7 @@ export default function AerospaceClubWebsite() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const sections = ['home', 'about', 'members', 'achievements', 'events', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
@@ -257,6 +366,11 @@ export default function AerospaceClubWebsite() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 transition-colors duration-300">
       {/* Navigation */}
@@ -273,7 +387,7 @@ export default function AerospaceClubWebsite() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Rocket className="h-8 w-8 text-primary animate-pulse-slow" />
+              <Rocket className="h-8 w-8 text-primary" />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                 JU Aerospace Club
               </span>
@@ -940,7 +1054,7 @@ export default function AerospaceClubWebsite() {
                 className="flex items-center space-x-2 mb-4"
                 whileHover={{ scale: 1.05 }}
               >
-                <Rocket className="h-8 w-8 text-primary animate-float" />
+                <Rocket className="h-8 w-8 text-primary" />
                 <span className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                   JU Aerospace Club
                 </span>
@@ -1011,4 +1125,6 @@ export default function AerospaceClubWebsite() {
       </footer>
     </main>
   );
-}
+};
+
+export default AerospaceClubWebsite;
