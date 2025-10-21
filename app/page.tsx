@@ -182,8 +182,8 @@ interface Event {
 // Sample data with proper typing
 const members: Member[] = [
   {
-    name: "Dr. Anika Sharma",
-    role: "Faculty Advisor",
+    name: "Navoneel",
+    role: "Club President",
     department: "Aerospace Engineering",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
     social: {
@@ -193,8 +193,8 @@ const members: Member[] = [
     }
   },
   {
-    name: "Rahul Verma",
-    role: "Club President",
+    name: "Koustav",
+    role: "Club Vice-President",
     department: "Mechanical Engineering",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
     social: {
@@ -203,65 +203,83 @@ const members: Member[] = [
     }
   },
   {
-    name: "Priya Patel",
+    name: "Prothoma Dutta",
     role: "Technical Lead",
-    department: "Electronics Engineering",
+    department: "mechanical Engineering",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
     social: {
       linkedin: "#",
       twitter: "#"
     }
   }
+    {
+    name: "Naman Ray",
+    role: "Sponsorship Lead",
+    department: "Electronics Engineering",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+     {
+    name: "Kaulik Das",
+    role: "Social Media Lead",
+    department: "Electronics Engineering",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
 ];
-
+//Achievements
 const achievements: Achievement[] = [
   {
-    title: "National Rocketry Challenge 2023",
+    title: "NSSC Contingent Award 2025",
     type: "Competition",
-    date: "March 2023",
-    description: "Secured 1st place in the national rocketry competition with our innovative design.",
+    date: "January 2025",
+    description: "The club represented Jadavpur University at the National Students’ Space Challenge at IIT Kharagpur. The team won the Contingent Award for exceptional participation, teamwork, and innovation in aerospace competitions.",
+    icon: Star
+  },
+  {
+    title: "RC Plane 1.0, Design & Manufacturing",
+    type: "Innovation",
+    date: "2024",
+    description: "The club successfully completed its first fully functional RC aircraft, built entirely in-house. The project included conceptual design, fuselage and wing construction, electronic installation, and test flights. It demonstrated the team's skills in aeromodelling and systems integration",
     icon: Rocket
   },
   {
-    title: "AI in Aerospace Research",
+    title: "Aircraft Design Projects (V-tail & H-tail) ",
     type: "Research",
-    date: "January 2023",
-    description: "Published paper on machine learning applications in aerodynamic optimization.",
+    date: "2025",
+    description: "The team finished detailed aerodynamic and structural designs for both V-tail and H-tail aircraft configurations. These projects serve as stepping stones for participation in the National Aeromodelling Competition 2025-26, highlighting the club’s commitment to research and design.",
     icon: Microscope
   },
   {
-    title: "Drone Innovation Award",
-    type: "Innovation",
-    date: "November 2022",
-    description: "Received recognition for developing a novel drone delivery system for medical supplies.",
-    icon: Award
-  },
-  {
-    title: "Wind Tunnel Workshop",
-    type: "Workshop",
-    date: "August 2022",
-    description: "Organized a hands-on workshop on wind tunnel testing for 100+ students.",
+    title: "Technical Events: Jal Astra & Skysprint",
+    type: "Competition",
+    date: "2025",
+    description: "The club successfully organized two large-scale aeromodelling events. Both events attracted over 100 team registrations, providing hands-on learning experiences and promoting excitement for aerospace across campus.",
     icon: BookOpen
   },
-  {
-    title: "Satellite Design Competition",
-    type: "Competition",
-    date: "June 2022",
-    description: "Finalists in the national satellite design competition with our CubeSat prototype.",
-    icon: Satellite
-  },
-  {
-    title: "Aerospace Education Grant",
-    type: "Recognition",
-    date: "April 2022",
-    description: "Awarded a grant to develop aerospace curriculum and learning materials.",
-    icon: GraduationCap
-  }
+  // {
+  //   title: "Satellite Design Competition",
+  //   type: "Competition",
+  //   date: "June 2022",
+  //   description: "Finalists in the national satellite design competition with our CubeSat prototype.",
+  //   icon: Satellite
+  // },
+  // {
+  //   title: "Aerospace Education Grant",
+  //   type: "Recognition",
+  //   date: "April 2022",
+  //   description: "Awarded a grant to develop aerospace curriculum and learning materials.",
+  //   icon: GraduationCap
+  // }
 ];
 
 const events: Event[] = [
   {
-    title: "Rocket Launch Workshop",
+    title: "Cansat",
     type: "upcoming",
     date: "2024-12-15",
     time: "2:00 PM - 5:00 PM",
@@ -279,18 +297,18 @@ const events: Event[] = [
     image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
   },
   {
-    title: "Annual Aerospace Symposium",
+    title: "Jalastra",
     type: "past",
-    date: "2024-10-10",
-    time: "9:00 AM - 5:00 PM",
-    location: "Conference Hall",
-    description: "Annual event showcasing student projects and research in aerospace engineering.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+    date: "2025-04-19",
+    time: "10:00 AM - 5:00 PM",
+    location: "JU, Salt Lake Ground",
+    description: "An exciting water rocket competition where teams design and build rockets using  water bottles  highlighting creativity, engineering skills, and aerodynamic design in this thrilling showcase of talent at Srijan 2025.",
+    image: "https://drive.google.com/file/d/18gXgAmBzqzMicAaijSaP48QwnvzncnCi/view?usp=drivesdk"
   },
   {
-    title: "Drone Racing Competition",
+    title: "SkySprint",
     type: "past",
-    date: "2024-08-20",
+    date: "2025-04-19",
     time: "10:00 AM - 4:00 PM",
     location: "Sports Ground",
     description: "Inter-college drone racing competition with participants from 15 institutions.",
@@ -797,7 +815,7 @@ const AerospaceClubWebsite: React.FC = () => {
                         <Badge 
                           variant="secondary" 
                           className={`ml-2 ${
-                            achievement.type === 'Competition' ? 'bg-green-500/20 text-green-400 border-green-500/30' :
+                            achievement.type === 'Innovation' ? 'bg-green-500/20 text-green-400 border-green-500/30' :
                             achievement.type === 'Research' ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' :
                             achievement.type === 'Innovation' ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' :
                             achievement.type === 'Workshop' ? 'bg-orange-500/20 text-orange-400 border-orange-500/30' :
