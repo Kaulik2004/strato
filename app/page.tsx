@@ -312,8 +312,28 @@ const members: Member[] = [
       twitter: "#"
     }
   },
+    {
+    name: "Souradip Daw ",
+    role: "OC Lead",
+    department: "Electrical Engineering",
+    image: "https://lh3.googleusercontent.com/u/0/d/1sttQWtM8b4dhFk_PL2K06POBcnDUk9zD",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+    {
+    name: "Bornita Mandal",
+    role: "OC Lead",
+    department: "Electrical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1FMs8RLzZm5PO8O5ZtDMr-8QekxDw6q5q",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
   {
-    name: "Sagnik Tripathi",
+    name: "Sagnik Tripathy",
     role: "Membership Lead",
     department: "Chemical Engineering",
     image: "https://lh3.googleusercontent.com/d/1XO_i_OpmuY4arszGlcX3ynd9vImEb8Y6",
