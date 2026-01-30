@@ -341,6 +341,7 @@ const members: Member[] = [
       linkedin: "#",
       twitter: "#"
     }
+  }
 ];
 //Achievements
 const achievements: Achievement[] = [
