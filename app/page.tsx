@@ -1169,7 +1169,7 @@ const AerospaceClubWebsite: React.FC = () => {
     transition={{ type: "spring", stiffness: 400, damping: 17 }} // Smoother animation
   >
     <a 
-      href="https://docs.google.com/forms/d/e/1FAIpQLSfk0KixQ34kox6dIaVO9Bv8JR7kZZ4rzB1mms0oSnIcTue_tA/viewform?usp=header" 
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdETe4BnHSGF0RgMtFqc9qtRzI9gReMdbddfgTAm9Ok2PPa7g/viewform?usp=publish-editor" 
       target="_blank" 
       rel="noopener noreferrer"
       className="block w-full"

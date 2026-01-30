@@ -27,4 +27,5 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
   );
 };
 
-export default ThemeProvider;
+// CHANGE IS HERE: Use curly braces for a named export
+export { ThemeProvider };
