@@ -182,10 +182,10 @@ interface Event {
 // Sample data with proper typing
 const members: Member[] = [
   {
-    name: "Navoneel",
+    name: "Naman Ray",
     role: "Club President",
-    department: "Aerospace Engineering",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1IPMXdCveS4_9LEGEWLCGEhlw9rPoS4J0",
     social: {
       linkedin: "#",
       github: "#",
@@ -193,10 +193,10 @@ const members: Member[] = [
     }
   },
   {
-    name: "Koustav",
+    name: "Hritam Dey",
     role: "Club Vice-President",
     department: "Mechanical Engineering",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    image: "https://lh3.googleusercontent.com/d/1-GwtGrTGGUKZWVIynFwGG_ex3OUAGZiX",
     social: {
       linkedin: "#",
       github: "#"
@@ -204,32 +204,124 @@ const members: Member[] = [
   },
   {
     name: "Prothoma Dutta",
-    role: "Technical Lead",
-    department: "mechanical Engineering",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+    role: "Secretary",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1JBB-vzPoAw2bYjHBJctdJrnNleZ8oV9e",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+    {
+    name: "Kaulik Das",
+    role: "Sponsorship Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/19yWbDgPIVC_wTGK0VR7zTN04OSX1oBcA",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+   {
+    name: "Divyansh Dutta",
+    role: "Technical Chair",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1jBY61MWw5fmoD4QS5cOjYxS6epv7NPkU",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+   {
+    name: "Satyam Roy",
+    role: "Management Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/u/0/d/15HdeBFIZCLOAa0L8ECFvx1qlfYiTqz3C",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+   {
+    name: "Avipso Sinha",
+    role: "Treasurer",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1GQB6y79CTy4XlgHusoWkBWHN9-HHOewp",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+   {
+    name: "Syed Zishan Aziz",
+    role: "RC plane & Drone Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1Kt0fI2uF3Ch_EK0qbo3E-RTJgf87Lj48",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+  {
+    name: "Priyanshu Kumar ",
+    role: "Cansat Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1CpBXb-T7ApuBH-56_bFXbAi6fx10RBNr",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+  {
+    name: "Swarnava Roy ",
+    role: "Event Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/u/0/d/1NzpRTmTZxVUBTlRRBDfHbv-g6ZG7LW-D",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+    {
+    name: "Debaditya Chaudhuri",
+    role: "Publicity Chair",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1BSPqV8mkT-kcDncVy-gpGl1fwVovoA4d=s500",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+   {
+    name: "Shayan Charan",
+    role: "Content Team Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/10jL0tldi5A9sgVpN6IrzTmvaTz5XJa-8",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+  {
+    name: "Ayurdyuti Ghosh ",
+    role: "Social Media Lead",
+    department: "Mechanical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1I-3qhNgGzdAll36DDJdVmrcw35z-MJzZ",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    }
+  },
+  {
+    name: "Sagnik Tripathi",
+    role: "Membership Lead",
+    department: "Chemical Engineering",
+    image: "https://lh3.googleusercontent.com/d/1XO_i_OpmuY4arszGlcX3ynd9vImEb8Y6",
     social: {
       linkedin: "#",
       twitter: "#"
     }
   }
-    {
-    name: "Naman Ray",
-    role: "Sponsorship Lead",
-    department: "Electronics Engineering",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-    social: {
-      linkedin: "#",
-      twitter: "#"
-    }
-     {
-    name: "Kaulik Das",
-    role: "Social Media Lead",
-    department: "Electronics Engineering",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
-    social: {
-      linkedin: "#",
-      twitter: "#"
-    }
 ];
 //Achievements
 const achievements: Achievement[] = [
@@ -261,40 +353,40 @@ const achievements: Achievement[] = [
     description: "The club successfully organized two large-scale aeromodelling events. Both events attracted over 100 team registrations, providing hands-on learning experiences and promoting excitement for aerospace across campus.",
     icon: BookOpen
   },
-  // {
-  //   title: "Satellite Design Competition",
-  //   type: "Competition",
-  //   date: "June 2022",
-  //   description: "Finalists in the national satellite design competition with our CubeSat prototype.",
-  //   icon: Satellite
-  // },
-  // {
-  //   title: "Aerospace Education Grant",
-  //   type: "Recognition",
-  //   date: "April 2022",
-  //   description: "Awarded a grant to develop aerospace curriculum and learning materials.",
-  //   icon: GraduationCap
-  // }
+  {
+    title: "Satellite Design Competition",
+    type: "Competition",
+    date: "June 2022",
+    description: "",
+    icon: Satellite
+  },
+  {
+    title: "Seminar on Aerospace Engineering",
+    type: "Recognition",
+    date: "April 2025",
+    description: "The club conducted a seminar for over 200+ undergraduate students.",
+    icon: GraduationCap
+  }
 ];
 
 const events: Event[] = [
   {
     title: "Cansat",
     type: "upcoming",
-    date: "2024-12-15",
-    time: "2:00 PM - 5:00 PM",
+    date: "TBD",
+    time: "TBD",
     location: "Aerospace Lab, JU Campus",
     description: "Hands-on workshop on rocket design, construction, and launch techniques.",
-    image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+    image: "https://lh3.googleusercontent.com/d/1c8pho8EP_ITtX5FJTSg9uSQs3cJ-zbca"
   },
   {
     title: "Guest Lecture: Space Technology",
     type: "upcoming",
-    date: "2024-12-22",
-    time: "11:00 AM - 1:00 PM",
-    location: "Main Auditorium",
-    description: "Dr. Vikram Sarabhai from ISRO will share insights on recent advancements in space technology.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+    date: "TBD",
+    time: "TBD",
+    location: "TBD",
+    description: "Dr. ______from ISRO will share insights on recent advancements in space technology.",
+    image: "https://lh3.googleusercontent.com/d/1GHdN3kyTPcFTqGixwYJZbX6dxfPwQABT"
   },
   {
     title: "Jalastra",
@@ -303,7 +395,7 @@ const events: Event[] = [
     time: "10:00 AM - 5:00 PM",
     location: "JU, Salt Lake Ground",
     description: "An exciting water rocket competition where teams design and build rockets using  water bottles  highlighting creativity, engineering skills, and aerodynamic design in this thrilling showcase of talent at Srijan 2025.",
-    image: "https://drive.google.com/file/d/18gXgAmBzqzMicAaijSaP48QwnvzncnCi/view?usp=drivesdk"
+   image: "https://lh3.googleusercontent.com/d/1hbM9y3qQAIhcq8Q96xOMt3Dg1mMyZ2m_"
   },
   {
     title: "SkySprint",
@@ -312,7 +404,7 @@ const events: Event[] = [
     time: "10:00 AM - 4:00 PM",
     location: "Sports Ground",
     description: "Inter-college drone racing competition with participants from 15 institutions.",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+    image: "https://lh3.googleusercontent.com/u/0/d/11Ayji4xNfaDDP3yjfZt8JyrdRc6bFjRr7"
   }
 ];
 
@@ -401,15 +493,31 @@ const AerospaceClubWebsite: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.div 
-              className="flex items-center space-x-2"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Rocket className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                JU Aerospace Club
-              </span>
-            </motion.div>
+  className="flex items-center space-x-2 cursor-pointer"
+  whileHover="hovered" // This "label" triggers children with the same variant name
+>
+  {/* The Rocket Icon: Isolated Rotation */}
+  <motion.div
+    variants={{
+      hovered: { rotate: 360, scale: 1.2 } // Rocket scales and spins
+    }}
+    transition={{ type: "spring", stiffness: 400, damping: 90 }}
+  >
+    <Rocket className="h-8 w-8 text-primary" />
+  </motion.div>
+
+  {/* The Text: No rotation, perhaps a slight scale or just static */}
+  <motion.span 
+    className="text-xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"
+    variants={{
+      hovered: { x: 10,scale:1.05} // Optional: subtle nudge to the right instead of spinning
+    }}
+  
+  >
+    
+    JU Aerospace Club
+  </motion.span>
+</motion.div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -622,7 +730,7 @@ const AerospaceClubWebsite: React.FC = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">
-                      To inspire and educate the next generation of aerospace engineers through hands-on projects, 
+                      To inspire and educate the next generation of students through hands-on projects, 
                       research opportunities, and industry collaborations. We strive to bridge the gap between 
                       theoretical knowledge and practical application.
                     </p>
@@ -662,10 +770,10 @@ const AerospaceClubWebsite: React.FC = () => {
               viewport={{ once: true }}
             >
               {[
-                { number: "150+", label: "Active Members" },
-                { number: "25+", label: "Projects Completed" },
-                { number: "15+", label: "Awards Won" },
-                { number: "8", label: "Years of Excellence" }
+                { number: "60+", label: "Active Members" },
+                { number: "5+", label: "Projects Completed" },
+                { number: "3+", label: "Awards Won" },
+                { number: "3", label: "Years of Excellence" }
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
@@ -1003,7 +1111,13 @@ const AerospaceClubWebsite: React.FC = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <Mail className="h-5 w-5 text-primary" />
-                    <span>aerospace.club@ju.ac.in</span>
+                    {/* <span>aerospace.club@ju.ac.in</span> */}
+                    <a 
+                   href="mailto:aerospace.club@ju.ac.in" 
+                   className="hover:text-primary transition-colors"
+                     >
+                     aerospace.club@ju.ac.in
+                    </a>
                   </motion.div>
                   <motion.div 
                     className="flex items-center space-x-3 text-muted-foreground"
@@ -1011,7 +1125,7 @@ const AerospaceClubWebsite: React.FC = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <Phone className="h-5 w-5 text-primary" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 98306 69894</span>
                   </motion.div>
                   <motion.div 
                     className="flex items-center space-x-3 text-muted-foreground"
@@ -1019,7 +1133,7 @@ const AerospaceClubWebsite: React.FC = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <MapPin className="h-5 w-5 text-primary" />
-                    <span>Aerospace Department, Jadavpur University, Kolkata - 700032</span>
+                    <span>Aerospace Club, Mechanical Department, Jadavpur University, Kolkata - 700032</span>
                   </motion.div>
                 </CardContent>
               </Card>
@@ -1038,7 +1152,7 @@ const AerospaceClubWebsite: React.FC = () => {
                   <Separator />
                   <div className="flex justify-between items-center">
                     <span>Saturday</span>
-                    <span className="text-primary">10:00 AM - 4:00 PM</span>
+                    <span className="text-primary">10:00 AM - 2:00 PM</span>
                   </div>
                   <Separator />
                   <div className="flex justify-between items-center">
@@ -1046,16 +1160,27 @@ const AerospaceClubWebsite: React.FC = () => {
                     <span className="text-muted-foreground">Closed</span>
                   </div>
                   <div className="mt-6 pt-6 border-t">
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Button className="w-full bg-primary hover:bg-primary/90 transition-colors duration-300">
-                        <Users className="mr-2 h-4 w-4" />
-                        Join Our Club
-                      </Button>
-                    </motion.div>
-                  </div>
+  <motion.div
+    whileHover={{ 
+      scale: 1.05, // Makes it slightly bigger 
+      filter: "brightness(1.2)" // Adds a "highlight" 
+    }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ type: "spring", stiffness: 400, damping: 17 }} // Smoother animation
+  >
+    <a 
+      href="https://docs.google.com/forms/d/e/1FAIpQLSfk0KixQ34kox6dIaVO9Bv8JR7kZZ4rzB1mms0oSnIcTue_tA/viewform?usp=header" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="block w-full"
+    >
+      <Button className="w-full bg-primary hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-primary/20">
+        <Users className="mr-2 h-4 w-4" />
+        Join Our Club
+      </Button>
+    </a>
+  </motion.div>
+</div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -1078,7 +1203,7 @@ const AerospaceClubWebsite: React.FC = () => {
                 </span>
               </motion.div>
               <p className="text-muted-foreground mb-4">
-                Inspiring the next generation of aerospace engineers through innovation, 
+                Inspiring the next generation of engineers through innovation, 
                 collaboration, and cutting-edge technology.
               </p>
               <div className="flex space-x-4">
@@ -1127,7 +1252,7 @@ const AerospaceClubWebsite: React.FC = () => {
               <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>aerospace.club@ju.ac.in</li>
-                <li>+91 98765 43210</li>
+                <li>+91 98306 69894</li>
                 <li>Jadavpur University</li>
                 <li>Kolkata, West Bengal</li>
               </ul>
@@ -1137,7 +1262,7 @@ const AerospaceClubWebsite: React.FC = () => {
           <Separator className="my-8" />
           
           <div className="text-center text-muted-foreground text-sm">
-            <p>&copy; 2024 JU Aerospace Club. All rights reserved. Built with passion for aerospace excellence.</p>
+            <p>&copy; 2026 JU Aerospace Club. All rights reserved. Built with passion for aerospace excellence.</p>
           </div>
         </div>
       </footer>

@@ -1,13 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'JU Aerospace Club - Reaching for the Stars',
-  description: 'The official website of Jadavpur University Aerospace Club - fostering innovation in aerospace engineering',
+  description: 'The official website of Jadavpur University Aerospace Club',
 };
 
 export default function RootLayout({
@@ -16,16 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark"> {/* Added dark class by default */}
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
