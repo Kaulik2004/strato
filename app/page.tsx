@@ -225,7 +225,7 @@ const members: Member[] = [
    {
     name: "Divyansh Dutta",
     role: "Technical Chair",
-    department: "Mechanical Engineering",
+    department: "Electrical Engineering",
     image: "https://lh3.googleusercontent.com/d/1jBY61MWw5fmoD4QS5cOjYxS6epv7NPkU",
     social: {
       linkedin: "#",
