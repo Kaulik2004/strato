@@ -405,7 +405,7 @@ const events: Event[] = [
     date: "TBD",
     time: "TBD",
     location: "TBD",
-    description: "Dr. ______from ISRO will share insights on recent advancements in space technology.",
+    description: "A renound researcherfrom ISRO will share insights on recent advancements in space technology.",
     image: "https://lh3.googleusercontent.com/d/1GHdN3kyTPcFTqGixwYJZbX6dxfPwQABT"
   },
   {
@@ -423,7 +423,7 @@ const events: Event[] = [
     date: "2025-04-19",
     time: "10:00 AM - 4:00 PM",
     location: "Sports Ground",
-    description: "Inter-college drone racing competition with participants from 15 institutions.",
+    description: "Inter-college glider competition",
     image: "https://lh3.googleusercontent.com/u/0/d/11Ayji4xNfaDDP3yjfZt8JyrdRc6bFjRr7"
   }
 ];
@@ -659,7 +659,17 @@ const AerospaceClubWebsite: React.FC = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
+              Stratosphere
+              
+            </motion.h1>
+              <motion.h1 
+              className="text-5xl sm:text-5xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-cyan-500 bg-clip-text text-transparent"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
               JU Aerospace Club
+              
             </motion.h1>
             <motion.p 
               className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed"
