@@ -707,14 +707,14 @@ const AerospaceClubWebsite: React.FC = () => {
             >
               Stratosphere
               
-            </motion.h1>
+            {/* </motion.h1>
               <motion.h1 
               className="text-5xl sm:text-5xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-cyan-500 bg-clip-text text-transparent"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              JU Aerospace Club
+              JU Aerospace Club */}
               
             </motion.h1>
             <motion.p 
