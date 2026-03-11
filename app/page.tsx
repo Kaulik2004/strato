@@ -168,6 +168,13 @@ interface Achievement {
   description: string;
   icon: React.ComponentType<{ className?: string }>;
 }
+interface Project {
+  title: string;
+  timeline: string;
+  status: 'ongoing' | 'completed';
+  description: string;
+  image: string;
+}
 
 interface Event {
   title: string;
@@ -177,7 +184,9 @@ interface Event {
   location: string;
   description: string;
   image: string;
+  // registrationLink?: string; // Add this line
 }
+
 
 // Sample data with proper typing
 const members: Member[] = [
@@ -373,13 +382,13 @@ const achievements: Achievement[] = [
     description: "The club successfully organized two large-scale aeromodelling events. Both events attracted over 100 team registrations, providing hands-on learning experiences and promoting excitement for aerospace across campus.",
     icon: BookOpen
   },
-  {
-    title: "Satellite Design Competition",
-    type: "Competition",
-    date: "June 2022",
-    description: "",
-    icon: Satellite
-  },
+  // {
+  //   title: "Satellite Design Competition",
+  //   type: "Competition",
+  //   date: "June 2022",
+  //   description: "",
+  //   icon: Satellite
+  // },
   {
     title: "Seminar on Aerospace Engineering",
     type: "Recognition",
@@ -391,23 +400,33 @@ const achievements: Achievement[] = [
 
 const events: Event[] = [
   {
-    title: "Cansat",
+    title: "SkySprint 2026",
     type: "upcoming",
     date: "TBD",
     time: "TBD",
-    location: "Aerospace Lab, JU Campus",
-    description: "Hands-on workshop on rocket design, construction, and launch techniques.",
-    image: "https://lh3.googleusercontent.com/d/1c8pho8EP_ITtX5FJTSg9uSQs3cJ-zbca"
+    location: "JU,Salt Lake Ground",
+    description: "An event that challenges participants to master the delicate balance of aerodynamics and structural engineering.",
+    image: "https://lh3.googleusercontent.com/d/1wHCkyYXnwFRHI05OpucYqBuXYYLKJ-fl"
   },
   {
-    title: "Guest Lecture: Space Technology",
+    title: "JalAstra 2026",
     type: "upcoming",
     date: "TBD",
     time: "TBD",
-    location: "TBD",
-    description: "A renound researcherfrom ISRO will share insights on recent advancements in space technology.",
-    image: "https://lh3.googleusercontent.com/d/1GHdN3kyTPcFTqGixwYJZbX6dxfPwQABT"
+    location: "Football Ground, JU Campus",
+    description: "An exciting water rocket competition where teams design and build rockets using  water bottles",
+    image: "https://lh3.googleusercontent.com/d/1z1poXGme5s5dPVEi0sR-ORx0Zl0g7pSs"
   },
+ {
+  title: "Guest Lecture: Space Technology",
+  type: "upcoming",
+  date: "TBD",
+  time: "TBD",
+  location: "TBD",
+  description: "A renowned researcher from ISRO will share insights on recent advancements in space technology, satellite propulsion, and India's future interplanetary missions.",
+  image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=compress&cs=tinysrgb&w=1600",
+  // registrationLink: "https://forms.gle/your-workshop-registration-link" 
+},
   {
     title: "Jalastra",
     type: "past",
@@ -423,9 +442,36 @@ const events: Event[] = [
     date: "2025-04-19",
     time: "10:00 AM - 4:00 PM",
     location: "Sports Ground",
-    description: "Inter-college glider competition",
-    image: "https://lh3.googleusercontent.com/u/0/d/11Ayji4xNfaDDP3yjfZt8JyrdRc6bFjRr7"
+    description: "Exhilarating competitive event that challenges participants to master the delicate balance of aerodynamics and structural engineering. The core of the competition involves designing and fabricating custom gliders, often using lightweight materials like balsa wood, foam, or composites, to achieve peak flight performance.",
+    image: "https://lh3.googleusercontent.com/d/1CtqY04Nr2Ekb_YE8Tdnmu4shUPsKYsXV"
   }
+];
+// Ongoing Projects
+const projects: Project[] = [
+  {
+    title: "CanSat",
+    timeline: "Jan 2025 - Ongoing",
+    status: "ongoing",
+    description:
+      "The main task is to manage a mission life cycle,  from the Preliminary Design Review (PDR) to post-flight data analysis, mirroring the rigorous standards of the global aerospace industry",
+    image: "https://lh3.googleusercontent.com/d/1VeidCzpwJp8hMf9lv7A-0KBKChpT5-GB",
+  },
+  {
+    title: "3D Printed Ecplison Model Development",
+    timeline: "Feb 2026 - Present",
+    status: "ongoing",
+    description:
+      "Project focuses on developing a high-fidelity scaled replica of the Epsilon launch vehicle, utilizing additive manufacturing to achieve complex aerodynamic geometries and internal structural ribbing. By integrating lightweight PLA or PETG materials.",
+    image: "https://lh3.googleusercontent.com/d/1QMaTIwpBFQmHc_bDi_koKkvFol-InxBI",
+  },
+  {
+    title: "F22 Raptor RC Model",
+    timeline: "Jan 2026 - Ongoing",
+    status: "ongoing",
+    description:
+      "a lightweight, 3D-printed airframe and a high-thrust EDF (Electric Ducted Fan) system. By utilizing thin-wall printing techniques and carbon-fiber reinforcements, the model mimics the stealth geometry and aerodynamic stability of the fifth-generation fighter for both high-speed passes and low-speed high-alpha flight.",
+    image: "https://lh3.googleusercontent.com/d/13uw_PmC8xNDn-FC22HLTaUym4sJiipmS",
+  },
 ];
 
 // Define variants with proper typing
@@ -475,7 +521,7 @@ const AerospaceClubWebsite: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = (): void => {
-      const sections = ['home', 'about', 'members', 'achievements', 'events', 'contact'];
+      const sections = ['home', 'about', 'members', 'achievements', 'events', 'projects','contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -541,7 +587,7 @@ const AerospaceClubWebsite: React.FC = () => {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['home', 'about', 'members', 'achievements', 'events', 'contact'].map((section) => (
+              {['home', 'about', 'members', 'achievements', 'events', 'projects','contact'].map((section) => (
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -678,6 +724,49 @@ const AerospaceClubWebsite: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               Reaching for the stars through innovation, collaboration, and cutting-edge aerospace technology
+              
+{/* /////////////////////////          // */}
+<motion.div 
+  className="mt-16 flex flex-col items-center space-y-8"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 1.1 }}
+>
+  {/* Header text in orange gradient */}
+  <p className="text-xl sm:text-2xl font-bold italic bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+    Ready to gear up for some Workshop on Aerodynamics and Control systems?
+  </p>
+
+  {/* Register Now Button - Reduced padding (breadth/height) */}
+  <motion.div 
+    whileHover={{ scale: 1.1 }} 
+    whileTap={{ scale: 0.95 }}
+  >
+    <Button 
+      className="font-extrabold text-xl md:text-2xl uppercase tracking-widest bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 hover:shadow-orange-500/40 shadow-xl px-12 py-4 h-auto rounded-full transition-all duration-300"
+      onClick={() => window.open('https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl', '_blank')}
+    >
+      Register Now!
+    </Button>
+  </motion.div>
+
+  {/* "To know more" and "click here" moved below the button */}
+  <div className="flex flex-row items-center justify-center space-x-3">
+    <p className="text-lg font-medium bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+      To know more
+    </p>
+    
+    <a 
+      href="https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="px-6 py-1.5 rounded-full border-2 border-orange-500 text-orange-500 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm uppercase tracking-wider"
+    >
+      click here
+    </a>
+  </div>
+</motion.div>
+{/* // */}
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -705,7 +794,11 @@ const AerospaceClubWebsite: React.FC = () => {
                   <Calendar className="mr-2 h-5 w-5" />
                   Upcoming Events
                 </Button>
+                
               </motion.div>
+              {/* //ff */}
+
+              {/* // */}
             </motion.div>
           </motion.div>
         </div>
@@ -1100,6 +1193,66 @@ const AerospaceClubWebsite: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* Ongoing Projects Section */}
+<section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-7xl mx-auto">
+    <motion.div 
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+        Ongoing Projects
+      </h2>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Take a look at the innovative research and development projects currently being built by our club members.
+      </p>
+    </motion.div>
+
+    <motion.div 
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {projects.map((project, index) => (
+        <motion.div key={index} variants={itemVariants}>
+          <Card className="bg-card/50 border-border/50 backdrop-blur-sm hover:bg-card/70 hover:scale-105 transition-all duration-300 overflow-hidden group">
+            <div className="relative h-48 overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <Badge 
+                className={`absolute top-4 right-4 ${
+                  project.status === 'ongoing' 
+                    ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' 
+                    : 'bg-green-500/20 text-green-400 border-green-500/30'
+                }`}
+                variant="secondary"
+              >
+                {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
+              </Badge>
+            </div>
+            <CardHeader>
+              <CardTitle className="text-xl">{project.title}</CardTitle>
+              <CardDescription>{project.timeline}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">{project.description}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -1264,7 +1417,7 @@ const AerospaceClubWebsite: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                {['About', 'Members', 'Achievements', 'Events'].map((link) => (
+                {['About', 'Members', 'Achievements','Projects', 'Events'].map((link) => (
                   <li key={link}>
                     <motion.button
                       onClick={() => scrollToSection(link.toLowerCase())}
@@ -1294,6 +1447,11 @@ const AerospaceClubWebsite: React.FC = () => {
           <div className="text-center text-muted-foreground text-sm">
             <p>&copy; 2026 JU Aerospace Club. All rights reserved. Built with passion for aerospace excellence.</p>
           </div>
+          {/* <div className="relative h-64 w-full border border-dashed">    */}
+              <div className="text-extreme-right text-muted-foreground text-[5px] leading-none">
+              <p>KD's</p>
+              </div>
+           {/* </div> */}
         </div>
       </footer>
     </main>
