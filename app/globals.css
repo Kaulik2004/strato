@@ -153,3 +153,12 @@ html {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
+/* FOR FLAMES */
+@keyframes flame-flicker {
+  0%, 100% { border-color: rgba(249, 115, 22, 0.4); box-shadow: 0 0 30px -5px rgba(249, 115, 22, 0.4); }
+  50% { border-color: rgba(239, 68, 68, 0.6); box-shadow: 0 0 45px -2px rgba(239, 68, 68, 0.5); }
+}
+
+.animate-flame {
+  animation: flame-flicker 3s infinite alternate ease-in-out;
+}

@@ -418,13 +418,13 @@ const events: Event[] = [
     image: "https://lh3.googleusercontent.com/d/1z1poXGme5s5dPVEi0sR-ORx0Zl0g7pSs"
   },
  {
-  title: "Guest Lecture: Space Technology",
+  title: "Wind-Craft-A motorised glider workshop",
   type: "upcoming",
-  date: "TBD",
+  date: "2nd April, 2026",
   time: "TBD",
-  location: "TBD",
-  description: "A renowned researcher from ISRO will share insights on recent advancements in space technology, satellite propulsion, and India's future interplanetary missions.",
-  image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=compress&cs=tinysrgb&w=1600",
+  location: "Mechanical Engineering Department, JU",
+  description: "Master the mechanics of flight with hands-on motorised  glider building experience.Register now to secure your spot and transform your project into a high-performance reality.",
+  image: "https://lh3.googleusercontent.com/d/1SAf4SO3Gah0mtPeW61WTXKF8NyZaYr-Y",
   // registrationLink: "https://forms.gle/your-workshop-registration-link" 
 },
   {
@@ -677,140 +677,144 @@ const AerospaceClubWebsite: React.FC = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30 dark:opacity-20"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=1600')"
-            }}
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20" />
-        
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-cyan-500 bg-clip-text text-transparent"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              Stratosphere
-              
-            {/* </motion.h1>
+      <section 
+  id="home" 
+  className="relative min-h-[140vh] md:min-h-[1200px] flex items-start justify-center overflow-hidden pt-32 pb-20"
+>
+  <motion.div 
+    className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30 dark:opacity-20 h-full"
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 1.5 }}
+  >
+    <div 
+      className="w-full h-full bg-cover bg-center"
+      style={{
+        backgroundImage: "url('https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=1600')"
+      }}
+    />
+  </motion.div>
+  <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-primary/20" />
+  
+  <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.3 }}
+      className="flex flex-col space-y-12" // Adds consistent gaps between elements
+    >
+      <motion.h1 
+        className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary via-blue-600 to-cyan-500 bg-clip-text text-transparent"
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+      >
+        Stratosphere
+        </motion.h1>
               <motion.h1 
               className="text-5xl sm:text-5xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-cyan-500 bg-clip-text text-transparent"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              JU Aerospace Club */}
-              
-            </motion.h1>
-            <motion.p 
-              className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              Reaching for the stars through innovation, collaboration, and cutting-edge aerospace technology
-              
-{/* /////////////////////////          // */}
-<motion.div 
-  className="mt-16 flex flex-col items-center space-y-8"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 0.8, delay: 1.1 }}
+              JU Aerospace Club
+      </motion.h1>
+
+      <motion.p 
+        className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.7 }}
+      >
+        Reaching for the stars through innovation, collaboration, and cutting-edge aerospace technology
+      </motion.p>
+
+      {/* Workshop Box */}
+     <motion.div 
+  className="max-w-4xl mx-auto overflow-hidden rounded-3xl border-2 border-orange-500/40 bg-black/40 backdrop-blur-sm relative 
+             /* Flaming Glow Effect */
+             shadow-[0_0_30px_-5px_rgba(249,115,22,0.4),0_0_50px_-10px_rgba(239,68,68,0.3)] 
+             hover:shadow-[0_0_50px_-5px_rgba(249,115,22,0.6),0_0_70px_-10px_rgba(239,68,68,0.5)] 
+             transition-shadow duration-500 ease-in-out"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.9 }}
 >
-  {/* Header text in orange gradient */}
-  <p className="text-xl sm:text-2xl font-bold italic bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-    Ready to gear up for some Workshop on Aerodynamics and Control systems?
-  </p>
+  {/* forrrrrr flames */}
+  {/* Optional: Subtle inner flame overlay */}
+  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-orange-500/5 to-transparent z-0" />
 
-  {/* Register Now Button - Reduced padding (breadth/height) */}
-  <motion.div 
-    whileHover={{ scale: 1.1 }} 
-    whileTap={{ scale: 0.95 }}
-  >
-    <Button 
-      className="font-extrabold text-xl md:text-2xl uppercase tracking-widest bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 hover:shadow-orange-500/40 shadow-xl px-12 py-4 h-auto rounded-full transition-all duration-300"
-      onClick={() => window.open('https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl', '_blank')}
-    >
-      Register Now!
-    </Button>
-  </motion.div>
+  <div className="flex flex-col md:grid md:grid-cols-2 relative z-10">
+    {/* Left Half: Picture */}
+    <div className="relative h-48 md:h-full min-h-[400px]">
+      <img 
+        src="https://lh3.googleusercontent.com/d/1SAf4SO3Gah0mtPeW61WTXKF8NyZaYr-Y" 
+        alt="Aerodynamics Workshop"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Dark overlay to make the left side match the "flame" theme */}
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent" />
+    </div>
 
-  {/* "To know more" and "click here" moved below the button */}
-  <div className="flex flex-row items-center justify-center space-x-3">
-    <p className="text-lg font-medium bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-      To know more
-    </p>
-    
-    <a 
-      href="https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="px-6 py-1.5 rounded-full border-2 border-orange-500 text-orange-500 font-bold hover:bg-orange-500 hover:text-white transition-all duration-300 text-sm uppercase tracking-wider"
-    >
-      click here
-    </a>
+    {/* Right Half: Content */}
+    <div className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
+      <p className="text-xl font-bold italic bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent"> 
+      Ready to join the workshop to master the mechanics of flight with hands-on motorised glider building experience?      
+      </p>
+      
+      <motion.div 
+        whileHover={{ scale: 1.05, filter: "brightness(1.2) drop-shadow(0 0 15px rgba(234, 48, 11, 0.8))" }} 
+        whileTap={{ scale: 0.95 }}
+      >
+        <Button 
+          className="font-extrabold text-lg uppercase tracking-widest bg-gradient-to-r from-orange-500 to-red-600 px-8 py-2 h-auto rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
+          onClick={() => window.open('https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl', '_blank')}
+        >
+          Register Now!
+        </Button>
+      </motion.div>
+
+      <div className="flex flex-col items-center">
+        <span className="text-s text-orange-400/70 uppercase mb-1">To know more</span>
+      <button 
+          onClick={() => window.open('https://drive.google.com/file/d/1tAerBzgGY4iUDqjJF8F06-J5_ZCjPZd8/view', '_blank')}
+          className="text-sm font-bold text-orange-500 border border-orange-500/50 px-6 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all shadow-[inset_0_0_10px_rgba(249,115,22,0.2)] uppercase tracking-wider"
+     >
+      BROCHURE
+     </button>
+      </div>
+    </div>
   </div>
 </motion.div>
-{/* // */}
-            </motion.p>
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg transition-all duration-300"
-                  onClick={() => scrollToSection('about')}
-                >
-                  <Rocket className="mr-2 h-5 w-5" />
-                  Explore Our Mission
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg transition-all duration-300"
-                  onClick={() => scrollToSection('events')}
-                >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Upcoming Events
-                </Button>
-                
-              </motion.div>
-              {/* //ff */}
 
-              {/* // */}
-            </motion.div>
-          </motion.div>
-        </div>
-
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+      {/* Bottom Action Buttons */}
+      <motion.div 
+        className="flex flex-col sm:flex-row gap-4 justify-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+      >
+        <Button 
+          size="lg" 
+          className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg"
+          onClick={() => scrollToSection('about')}
         >
-          <ChevronDown className="h-6 w-6 text-primary" />
-        </motion.div>
-      </section>
+          <Rocket className="mr-2 h-5 w-5" />
+          Explore Our Mission
+        </Button>
+        <Button 
+          size="lg" 
+          variant="outline" 
+          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 text-lg"
+          onClick={() => scrollToSection('events')}
+        >
+          <Calendar className="mr-2 h-5 w-5" />
+          Upcoming Events
+        </Button>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
       {/* About Us Section */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
