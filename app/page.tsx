@@ -768,7 +768,7 @@ const AerospaceClubWebsite: React.FC = () => {
       >
         <Button 
           className="font-extrabold text-lg uppercase tracking-widest bg-gradient-to-r from-orange-500 to-red-600 px-8 py-2 h-auto rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
-          onClick={() => window.open('https://youtu.be/dQw4w9WgXcQ?si=J5ZSRvewpw9GDYIl', '_blank')}
+          onClick={() => window.open('https://forms.gle/61QpCMDCWs1hRVgo8', '_blank')}
         >
           Register Now!
         </Button>
