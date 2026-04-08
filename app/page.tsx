@@ -1,5 +1,6 @@
 'use client';
 
+import PreviousMembers from "../components/PreviousMembers"; // adjust path as needed
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { 
@@ -419,7 +420,7 @@ const events: Event[] = [
   },
  {
   title: "Wind-Craft-A motorised glider workshop",
-  type: "upcoming",
+  type: "past",
   date: "2nd April, 2026",
   time: "TBD",
   location: "Mechanical Engineering Department, JU",
@@ -768,9 +769,9 @@ const AerospaceClubWebsite: React.FC = () => {
       >
         <Button 
           className="font-extrabold text-lg uppercase tracking-widest bg-gradient-to-r from-orange-500 to-red-600 px-8 py-2 h-auto rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
-          onClick={() => window.open('https://forms.gle/61QpCMDCWs1hRVgo8', '_blank')}
+          onClick={() => window.open('https://fgle/61QpCWs1hRVgo8', '_blank')}
         >
-          Register Now!
+          Registrations Closed!
         </Button>
       </motion.div>
 
@@ -1006,6 +1007,13 @@ const AerospaceClubWebsite: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* {added} */}
+          <div className="flex justify-center">
+            <PreviousMembers />
+          {/* {added} */}
+          </div>
+
         </div>
       </section>
 
