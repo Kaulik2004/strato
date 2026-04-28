@@ -197,8 +197,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1IPMXdCveS4_9LEGEWLCGEhlw9rPoS4J0",
     social: {
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/namanray",
       twitter: "#"
     }
   },
@@ -208,7 +207,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1-GwtGrTGGUKZWVIynFwGG_ex3OUAGZiX",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/hritam-dey?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "#"
     }
   },
@@ -218,7 +217,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1JBB-vzPoAw2bYjHBJctdJrnNleZ8oV9e",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/prothoma-dutta-4b7297329",
       twitter: "#"
     }
   },
@@ -228,8 +227,8 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/19yWbDgPIVC_wTGK0VR7zTN04OSX1oBcA",
     social: {
-      linkedin: "#",
-      twitter: "#"
+      linkedin: "https://www.linkedin.com/in/kaulik-das-63273328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Kaulik2004"
     }
   },
    {
@@ -238,7 +237,7 @@ const members: Member[] = [
     department: "Electrical Engineering",
     image: "https://lh3.googleusercontent.com/d/1jBY61MWw5fmoD4QS5cOjYxS6epv7NPkU",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/divyansh-dutta-b93857297/",
       twitter: "#"
     }
   },
@@ -268,7 +267,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1Kt0fI2uF3Ch_EK0qbo3E-RTJgf87Lj48",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/syed-zishan-aziz-3a48a1286?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       twitter: "#"
     }
   },
@@ -278,7 +277,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1CpBXb-T7ApuBH-56_bFXbAi6fx10RBNr",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/priyanshu-kumar-924252313",
       twitter: "#"
     }
   },
@@ -288,7 +287,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/u/0/d/1NzpRTmTZxVUBTlRRBDfHbv-g6ZG7LW-D",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/swarnava-roy-277894336?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       twitter: "#"
     }
   },
@@ -318,7 +317,7 @@ const members: Member[] = [
     department: "Mechanical Engineering",
     image: "https://lh3.googleusercontent.com/d/1I-3qhNgGzdAll36DDJdVmrcw35z-MJzZ",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/ayurdyuti-ghosh-9b2b22335?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       twitter: "#"
     }
   },
@@ -328,7 +327,7 @@ const members: Member[] = [
     department: "Electrical Engineering",
     image: "https://lh3.googleusercontent.com/u/0/d/1sttQWtM8b4dhFk_PL2K06POBcnDUk9zD",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/souradip-daw-535799351/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdbzUBl4BST6JLfUPPEM%2FxQ%3D%3D",
       twitter: "#"
     }
   },
@@ -338,7 +337,7 @@ const members: Member[] = [
     department: "Electrical Engineering",
     image: "https://lh3.googleusercontent.com/d/1FMs8RLzZm5PO8O5ZtDMr-8QekxDw6q5q",
     social: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/bornita-mandal-377374321?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       twitter: "#"
     }
   },
@@ -505,6 +504,22 @@ const AerospaceClubWebsite: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
+
+  const [current, setCurrent] = useState(0);
+  const [expandedSlide, setExpandedSlide] = useState<number | null>(null);  
+
+const slides = [
+  { img: "https://lh3.googleusercontent.com/d/14SwWtLUXBhZhGjxO08zIDn8wBA1POgoT", label: "WindCraft Rewind" },
+  { img: "https://lh3.googleusercontent.com/d/1ZsMhU2-8_cPyHtrLzneAeWKzKYiKrug_", label: "Technical Sessions" },
+  { img: "https://lh3.googleusercontent.com/d/1gibzmOIECl2xAFXIPATR-C56M9knUpAG", label: "Motorised Glider Build" },
+  { img: "https://lh3.googleusercontent.com/d/1kn0-V93zLoXGb2IitVwLf-lDcSffovnU", label: "Hands-On Testing" },
+  {img: "https://lh3.googleusercontent.com/d/1cJ_XENSR_ewiLXgm7bQh7_FOwXMcDjBP", label: "All about that Day" }
+];
+
+useEffect(() => {
+  const timer = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000); //5000 milisec for slide
+  return () => clearInterval(timer);
+}, []);
 
   // Handle hydration mismatch
   useEffect(() => {
@@ -730,64 +745,158 @@ const AerospaceClubWebsite: React.FC = () => {
         Reaching for the stars through innovation, collaboration, and cutting-edge aerospace technology
       </motion.p>
 
-      {/* Workshop Box */}
-     <motion.div 
-  className="max-w-4xl mx-auto overflow-hidden rounded-3xl border-2 border-orange-500/40 bg-black/40 backdrop-blur-sm relative 
-             /* Flaming Glow Effect */
-             shadow-[0_0_30px_-5px_rgba(249,115,22,0.4),0_0_50px_-10px_rgba(239,68,68,0.3)] 
-             hover:shadow-[0_0_50px_-5px_rgba(249,115,22,0.6),0_0_70px_-10px_rgba(239,68,68,0.5)] 
-             transition-shadow duration-500 ease-in-out"
-  initial={{ opacity: 0, y: 20 }}
+{/* Workshop Box - 5 Slices */}
+<motion.div
+  className="w-full max-w-3xl mx-auto overflow-hidden rounded-2xl relative
+             border border-orange-500/30
+             shadow-[0_0_40px_-8px_rgba(249,115,22,0.5),0_0_80px_-20px_rgba(239,68,68,0.3),inset_0_0_40px_-20px_rgba(249,115,22,0.05)]
+             hover:shadow-[0_0_60px_-8px_rgba(249,115,22,0.7),0_0_100px_-20px_rgba(239,68,68,0.5)]
+             transition-all duration-700 ease-in-out bg-black/70 backdrop-blur-md"
+  initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.9 }}
+  transition={{ duration: 0.9, delay: 0.9 }}
 >
-  {/* forrrrrr flames */}
-  {/* Optional: Subtle inner flame overlay */}
-  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-orange-500/5 to-transparent z-0" />
+  {/* Corner accents */}
+  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-500/70 rounded-tl-2xl z-20 pointer-events-none" />
+  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-orange-500/70 rounded-tr-2xl z-20 pointer-events-none" />
+  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-orange-500/70 rounded-bl-2xl z-20 pointer-events-none" />
+  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-500/70 rounded-br-2xl z-20 pointer-events-none" />
 
-  <div className="flex flex-col md:grid md:grid-cols-2 relative z-10">
-    {/* Left Half: Picture */}
-    <div className="relative h-48 md:h-full min-h-[400px]">
-      <img 
-        src="https://lh3.googleusercontent.com/d/1SAf4SO3Gah0mtPeW61WTXKF8NyZaYr-Y" 
-        alt="Aerodynamics Workshop"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      {/* Dark overlay to make the left side match the "flame" theme */}
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent" />
+  {/* Flame overlay */}
+  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-orange-950/40 via-transparent to-transparent z-0" />
+
+  {/* Title */}
+  <div className="relative z-10 pt-5 pb-3 text-center">
+    <div className="inline-flex items-center gap-2 px-5 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mx-auto">
+      <span className="text-orange-400 text-xs">✦</span>
+      <h2 className="text-sm font-semibold tracking-[0.3em] uppercase bg-gradient-to-r from-orange-300 via-red-400 to-orange-500 bg-clip-text text-transparent">
+        Workshop Gallery
+      </h2>
+      <span className="text-orange-400 text-xs">✦</span>
     </div>
+  </div>
 
-    {/* Right Half: Content */}
-    <div className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
-      <p className="text-xl font-bold italic bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent"> 
-      Ready to join the workshop to master the mechanics of flight with hands-on motorised glider building experience?      
-      </p>
-      
-      <motion.div 
-        whileHover={{ scale: 1.05, filter: "brightness(1.2) drop-shadow(0 0 15px rgba(234, 48, 11, 0.8))" }} 
-        whileTap={{ scale: 0.95 }}
+  {/* 5 Slices */}
+  <div className="relative flex h-64 sm:h-72 md:h-80 z-10 group">
+    {slides.map((slide, i) => (
+      <div
+        key={i}
+        onClick={() => setExpandedSlide(i)}
+        className="relative flex-1 overflow-hidden cursor-pointer transition-all duration-500 ease-in-out hover:flex-[3]
+                   /* Replaced dark background with an inner glow for separation */
+                   shadow-[inset_0_0_30px_rgba(0,0,0,0.6)] hover:shadow-none"
       >
-        <Button 
-          className="font-extrabold text-lg uppercase tracking-widest bg-gradient-to-r from-orange-500 to-red-600 px-8 py-2 h-auto rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.5)]"
-          onClick={() => window.open('https://fgle/61QpCWs1hRVgo8', '_blank')}
-        >
-          Registrations Closed!
-        </Button>
-      </motion.div>
+    
+        <img
+          src={slide.img}
+          alt={slide.label}
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out
+                     grayscale brightness-110 contrast-125
+                     group-hover:grayscale group-hover:brightness-90
+                     hover:!grayscale-0 hover:!brightness-100 hover:!contrast-100"
+        />
 
-      <div className="flex flex-col items-center">
-        <span className="text-s text-orange-400/70 uppercase mb-1">To know more</span>
-      <button 
-          onClick={() => window.open('https://drive.google.com/file/d/1tAerBzgGY4iUDqjJF8F06-J5_ZCjPZd8/view', '_blank')}
-          className="text-sm font-bold text-orange-500 border border-orange-500/50 px-6 py-1.5 rounded-full hover:bg-orange-500 hover:text-white transition-all shadow-[inset_0_0_10px_rgba(249,115,22,0.2)] uppercase tracking-wider"
-     >
-      BROCHURE
-     </button>
+
+        {/* Orange side border between slices - Increased opacity slightly for distinction */}
+        {i < slides.length - 1 && (
+          <div className="absolute right-0 top-0 bottom-0 w-px bg-orange-500/30 z-10" />
+        )}
+
+        {/* Label - only visible on hover */}
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pb-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+          <span className="px-3 py-1 rounded-full bg-black/60 border border-orange-500/40 text-orange-300 text-[10px] font-medium tracking-widest uppercase backdrop-blur-sm whitespace-nowrap">
+            {slide.label}
+          </span>
+        </div>
+
+        {/* Expand icon on hover */}
+        <div className="absolute top-3 right-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
+          <div className="w-6 h-6 rounded-full bg-black/60 border border-orange-500/40 flex items-center justify-center">
+            <span className="text-orange-400 text-[10px]">⤢</span>
+          </div>
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+
+  {/* Dot indicators */}
+  <div className="flex justify-center items-center gap-2 py-4 relative z-10">
+    {slides.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => setExpandedSlide(i)}
+        className="w-2 h-2 rounded-full bg-orange-500/40 hover:bg-orange-500 transition-all duration-300"
+      />
+    ))}
   </div>
 </motion.div>
 
+{/* Lightbox / Zoom Modal - Kept same as requested */}
+<AnimatePresence>
+  {expandedSlide !== null && (
+    <motion.div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setExpandedSlide(null)}
+    >
+      <motion.div
+        className="relative max-w-4xl w-full mx-4 rounded-2xl overflow-hidden border border-orange-500/30
+                   shadow-[0_0_60px_-10px_rgba(249,115,22,0.6)]"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Corner accents on modal */}
+        <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-orange-500/70 rounded-tl-2xl z-20 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-orange-500/70 rounded-tr-2xl z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-orange-500/70 rounded-bl-2xl z-20 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-orange-500/70 rounded-br-2xl z-20 pointer-events-none" />
+
+        <img
+          src={slides[expandedSlide].img}
+          alt={slides[expandedSlide].label}
+          className="w-full h-auto max-h-[80vh] object-cover"
+        />
+
+        {/* Bottom bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex items-center justify-between">
+          <span className="px-4 py-1 rounded-full bg-black/60 border border-orange-500/40 text-orange-300 text-xs font-medium tracking-widest uppercase backdrop-blur-sm">
+            {slides[expandedSlide].label}
+          </span>
+          <span className="text-orange-400/60 text-xs tracking-wider">
+            {expandedSlide + 1} / {slides.length}
+          </span>
+        </div>
+
+        {/* Prev / Next inside modal */}
+        <button
+          onClick={() => setExpandedSlide((s) => (s! - 1 + slides.length) % slides.length)}
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 border border-orange-500/40 text-orange-400 flex items-center justify-center hover:bg-orange-500/30 transition-all"
+        >
+          &#8592;
+        </button>
+        <button
+          onClick={() => setExpandedSlide((s) => (s! + 1) % slides.length)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 border border-orange-500/40 text-orange-400 flex items-center justify-center hover:bg-orange-500/30 transition-all"
+        >
+          &#8594;
+        </button>
+
+        {/* Close button */}
+        <button
+          onClick={() => setExpandedSlide(null)}
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/70 border border-orange-500/40 text-orange-400 flex items-center justify-center hover:bg-red-500/30 hover:border-red-400 transition-all text-sm z-30"
+        >
+          ✕
+        </button>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
       {/* Bottom Action Buttons */}
       <motion.div 
         className="flex flex-col sm:flex-row gap-4 justify-center"
